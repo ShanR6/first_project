@@ -25,9 +25,8 @@ y_coords = []
 for i in range(num_bobbles):
     y_coords.append(100*rnd())
 
-# t = int(input('Введите t:'))
-t = 80
-
+t = 100
+# h - высота
 
 def circle_move(time, delay, x1, y1):
     phi = np.arange(0, 2 * np.pi, 0.01)
@@ -71,4 +70,4 @@ ani = FuncAnimation(fig,
                     frames=200,
                     interval=30
                     )
-ani.save('kipenie(TEST!4).gif')
+ani.save('kipenie(100C).gif')
