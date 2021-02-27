@@ -25,13 +25,8 @@ y_coords = []
 for i in range(num_bobbles):
     y_coords.append(100*rnd())
 
-edge = 100
-plt.axis('equal')
-ax.set_xlim(0, edge)
-ax.set_ylim(0, edge)
+t = 40
 
-t = 100
-# h - высота
 
 def circle_move(time, delay, x1, y1):
     phi = np.arange(0, 2 * np.pi, 0.01)
@@ -39,14 +34,12 @@ def circle_move(time, delay, x1, y1):
         x = 0
         y = 0
     else:
-        if t >= 90 and edge >= 60:
+        if t >= 90:
             a = 0.0001 * b * 30 * t
-        elif t >= 80 and t < 90 and edge >= 60:
+        elif t >= 80 and t < 90:
             a = 0.0001 * b * 3 * t
-        elif t < 80 and edge >= 60:
-            a = 0.0001 * b * 1.5 * t
         else:
-          a = 0
+            a = 0.0001 * b * 1.5 * t
 
         vy0 = 0.02 * t
         y0 = vy0 * (time - delay)
@@ -77,4 +70,4 @@ ani = FuncAnimation(fig,
                     frames=200,
                     interval=30
                     )
-ani.save('kipenie(100C1).gif')
+ani.save('kipenie(100C).gif')
